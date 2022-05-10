@@ -5,11 +5,11 @@ namespace cs_sstu_lab5.Models
     public class CalculatorModel
     {
         [Display(Name = "First Number")]
-        public double A { get; set; }
+        public string A { get; set; }
         [Display(Name = "Second Number")]
-        public double B { get; set; }
+        public string B { get; set; }
         public OperationType Operation { get; set; }
-        public double Result { get; set; }
+        public string Result { get; set; }
 
         public enum OperationType
         {

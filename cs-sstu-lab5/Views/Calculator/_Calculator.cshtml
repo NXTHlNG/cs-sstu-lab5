@@ -1,0 +1,63 @@
+﻿@model cs_sstu_lab5.Models.CalculatorModel
+
+<div class="row">
+    <div class="col-md-4">
+        <form id = "calculator" asp-controller="Calculator" asp-action="Index" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="A" class="control-label"></label>
+                <input asp-for="A" class="form-control" />
+                <span asp-validation-for="A" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="B" class="control-label"></label>
+                <input asp-for="B" class="form-control" />
+                <span asp-validation-for="B" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Operation" class="control-label"></label>
+                <select asp-for="Operation" class="form-control" asp-items="Html.GetEnumSelectList<CalculatorModel.OperationType>()"></select>
+                <span asp-validation-for="Operation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Result" class="control-label"></label>
+                @Html.DisplayFor(m => m.Result)
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Calculate" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+        //let calculator = document.querySelector('#calculator')
+
+        //calculator.addEventListener('submit', event => {
+        //    event.preventDefault();
+
+        //    let formData = new FormData(calculator)
+
+        //    console.log(formData.get('A'))
+
+        //    let calcData = {
+        //        A: formData.get('A'), 
+        //        B: formData.get('B'), 
+        //        Operation: formData.get('Operation')
+        //    }
+
+        //    console.log(calcData)
+        //    console.log(JSON.stringify(calcData))
+
+        //    $.ajax({
+        //        url: '/calculator/calculate',
+        //        type: 'POST',
+        //        data: JSON.stringify(calcData),
+        //        contentType: 'application/json; charset=utf-8',
+        //        success: data => console.log(data)
+        //   });
+        //});
+</script>
+
+
+
